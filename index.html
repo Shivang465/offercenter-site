@@ -106,5 +106,27 @@
 
   <footer>© 2026 Offercenter · Deals, discounts & offers</footer>
 </div>
+<script>
+(function() {
+    var username = "Offercenter_offerzone";
+    var appUrl = "tg://resolve?domain=" + username;
+    var webUrl = "https://t.me/" + username;
+
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Mobile me direct Telegram App trigger karega
+        window.location.href = appUrl;
+
+        // Agar kisi ke phone me Telegram install nahi hai toh 1 second baad browser me link kholega
+        setTimeout(function() {
+            window.location.href = webUrl;
+        }, 1000);
+    } else {
+        // Laptop / PC user ke liye direct web link
+        window.location.href = webUrl;
+    }
+})();
+</script>
 </body>
 </html>
